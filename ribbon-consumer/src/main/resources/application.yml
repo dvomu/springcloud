@@ -10,4 +10,17 @@ spring:
         username: nacos
         password: nacos
         namespace: public
+# producer服务名称
+ribbon-producer:
+  ribbon:
+    # 使用的负载均衡策略全路径
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+    # 使用自定义负载均衡策略
+    NFLoadBalancerRuleClassName: com.dvomu.springcloud.conf.rule.CustomRule
+ribbon:
+  eager-load:
+    # 配置ribbon-producer使用ribbon饥饿加载,多个服务使用逗号分割
+    clients: ribbon-producer
+    # 开启ribbon饥饿加载
+    enabled: true
 

@@ -1,11 +1,10 @@
-package com.dvomu.springcloud.ribbon;
+package com.dvomu.springcloud.loadbalancer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,9 +14,12 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+//@RibbonClients(value={
+//     @RibbonClient(name = "ribbon-producer",configuration = RibbonRandomRuleConfig.class)
+//})
 public class RibbonConsumerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RibbonConsumerApplication.class);
+        SpringApplication.run(LoadbalancerConsumerApplication.class);
     }
 
     @Bean

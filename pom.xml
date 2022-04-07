@@ -13,6 +13,7 @@
         <module>ribbon-consumer</module>
         <module>ribbon-producer</module>
         <module>ribbon-producer8080</module>
+        <module>loadbalancer-consumer8083</module>
     </modules>
     <packaging>pom</packaging>
 
