@@ -1,0 +1,24 @@
+spring:
+  application:
+    # 与Nacos控制台创建的Data Id保持一致
+    name: com.dvomu.springcloud.nacos-config
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      config:
+        # 默认使用properties格式
+        file-extension: yml
+        # 默认使用public,如果要自定义应该使用namespace ID
+        namespace: 9e64b608-6416-4f2d-b5bc-e13a2a4ba293
+        group: DEFAULT_GROUP
+#        extension-configs[0]:
+#           dataId: nacos-config-test.yml
+#           group: tmail
+#           refresh: true
+        # extension-configs与shared-configs 功能一致,优先级不同
+        shared-configs[0]:
+          dataId: nacos-config-test.yml
+          group: tmail
+          refresh: true

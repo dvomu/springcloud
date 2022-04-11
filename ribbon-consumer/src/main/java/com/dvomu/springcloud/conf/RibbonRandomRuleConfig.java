@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @create: 2022-04-08
  */
 @Configuration
+@ExcudeRibbonConfig
 public class RibbonRandomRuleConfig {
 
     //方法名一定要叫iRule

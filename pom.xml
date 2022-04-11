@@ -14,6 +14,9 @@
         <module>ribbon-producer</module>
         <module>ribbon-producer8080</module>
         <module>loadbalancer-consumer8083</module>
+        <module>feign-comsumer</module>
+        <module>feign-provider</module>
+        <module>nacos-config</module>
     </modules>
     <packaging>pom</packaging>
 

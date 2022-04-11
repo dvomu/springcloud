@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: feign-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: public
+logging:
+  level:
+    com.dvomu.springcloud.feign.consumer.feign: debug
+feign:
+  client:
+    config:
+      # feign-provider 对应的微服务
+      feign-provider:
+        loggerLevel: HEADERS
+        # 设置为默认契约,还原成了Feign的原生注解
+#        contract: feign.Contract.Default
+        # 连接超时时间,默认10秒
+#        connectTimout: 5000
+#        # 请求超时时间,默认60秒
+#        readTimeout: 10000
+        # 配置自定义拦截器
+        requestInterceptors[0]:
+          com.dvomu.springcloud.feign.intercptor.CustIntercptor
+
