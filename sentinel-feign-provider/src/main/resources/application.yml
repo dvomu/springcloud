@@ -1,0 +1,14 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: sentinel-feign-privider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: public
+
+

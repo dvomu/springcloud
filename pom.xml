@@ -17,6 +17,10 @@
         <module>feign-comsumer</module>
         <module>feign-provider</module>
         <module>nacos-config</module>
+        <module>sentinel-demo</module>
+        <module>sentinel-feign-consumer</module>
+        <module>sentinel-feign-provider</module>
+        <module>gateway</module>
     </modules>
     <packaging>pom</packaging>
 

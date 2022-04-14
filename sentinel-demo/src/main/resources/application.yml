@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sentinel-demo
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+      # 链路流控
+      web-context-unify: false
+      datasource:
+        flow-rule:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            # nacos配置dataId
+            dataId: sentinel-flow-rule
+            rule-type: flow
+

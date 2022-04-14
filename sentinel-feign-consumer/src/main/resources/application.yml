@@ -1,0 +1,24 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: sentinel-feign-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: public
+logging:
+  level:
+    com.dvomu.springcloud.feign.consumer.feign: debug
+feign:
+  client:
+    config:
+      feign-provider:
+        loggerLevel: HEADERS
+  # openfeign整合sentinel
+  sentinel:
+    enabled: true
+

@@ -14,4 +14,6 @@ public class RibbonProducerApplication {
     public static void main(String[] args) {
         SpringApplication.run(RibbonProducerApplication.class);
     }
+
+
 }
