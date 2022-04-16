@@ -1,0 +1,48 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: seata-stock
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/seata-stock?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: 104551
+
+mybatis:
+  type-aliases-package: com.dvomu.springcloud.seata.stock.pojo
+  mapper-locations: classpath:/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  logging:
+    level:
+      com.dvomu.springcloud.seata.stock: debug
+seata:
+  # 配置seata注册中心
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server # seata server服务名
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+  # 配置seata配置中心,可以读取相关配置
+  config:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      namespace: 4db10efb-747f-4095-94d4-d3ace136dcbb
+      group: SEATA_GROUP

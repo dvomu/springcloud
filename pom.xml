@@ -21,6 +21,7 @@
         <module>sentinel-feign-consumer</module>
         <module>sentinel-feign-provider</module>
         <module>gateway</module>
+        <module>seata</module>
     </modules>
     <packaging>pom</packaging>
 
